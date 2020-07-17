@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 import 'bloc.dart';
-/*
-
 
 
 // Создаем провайдер "блоков" T - это какой-то bloc
@@ -15,9 +14,9 @@ class BlocProvider<T extends Bloc> extends StatefulWidget {
 
   // Of - позволяет виджетам извлекать bloc из
   // потомков в дереве виджетов в текущем билд контексте (базовый паттерн)
-  static T of<T extends Bloc>(BuildContext context) {
+  static T of <T extends Bloc>(BuildContext context) {
     final type = _providerType<BlocProvider<T>>();
-    final BlocProvider<T> provider = findAncestorWidgetOfExactType(type);
+    final BlocProvider<T> provider = context.findAncestorWidgetOfExactType();
     return provider.bloc;
   }
 
@@ -40,4 +39,3 @@ class _BlocProviderState extends State<BlocProvider> {
     super.dispose();
   }
 }
-*/
